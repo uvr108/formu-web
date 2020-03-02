@@ -1,0 +1,51 @@
+<div style="padding-left: 15px;  padding-right: 15px">
+
+  <!-- Show it when there is no employee -->
+  <div class="no-data text-center" *ngIf="Volunteer.length == 0">
+    <p>There is no volunteer added yet!</p>
+    <button class="btn btn-outline-primary" routerLink="/crea-voluntario">Add Empoyee</button>
+  </div>
+
+  <!-- Employees list table, it hides when there is no employee -->
+  <div *ngIf="Volunteer.length !== 0">
+    <h3 class="mb-3 text-center">Volunteer List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Rut</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Email</th>
+            <th scope="col">Fono</th>
+            <th scope="Col">Nacimiento</th>
+            <th scope="col">Comuna</th>
+            <th scope="col">Region</th>
+            <th scope="col">Brig.</th>
+            <th scope="col">Redes</th>
+            <th scope="col">Puerta P</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let vol of Volunteer | paginate: { itemsPerPage: 10, currentPage: p }">
+            <td>{{vol['rut']}}</td>
+            <td>{{vol['nombre']}}</td>
+            <td>{{vol['apellido']}}</td>
+            <td>{{vol['email']}}</td>
+            <td>{{vol['phone']}}</td>
+            <td>{{vol['nacimiento']}}</td>
+            <td>{{vol['comuna']}}</td>
+            <td>{{vol['region']}}</td>
+            <td>{{vol['brigadista']}}</td>
+            <td>{{vol['redes']}}</td>
+            <td>{{vol['puertapuerta']}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+
+  </div>
+
+</div>

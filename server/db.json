@@ -1,0 +1,46 @@
+{
+  "voluntarios": [
+    {
+      "id": 1,
+      "rut": "8685800-2",
+      "nombre": "Ulises",
+      "apellido": "Vergara",
+      "email": "ulises@mcu.com",
+      "nacimiento": "25/09/1962",
+      "phone": "942597029",
+      "comuna": "Ñuñoa",
+      "region": 1,
+      "brigadista": true,
+      "redes":true,
+      "puertapuerta": null
+    },
+    {
+      "id": 2,
+      "rut": "123223333-9",
+      "nombre": "Matias",
+      "apellido": "Vergara",
+      "email": "matias@mcu.com",
+      "nacimiento": "12/05/1989",
+      "phone": "945654587",
+      "comuna": "Quillota",
+      "region": 2,
+      "brigadista": null,
+      "redes":true,
+      "puertapuerta": null
+    },
+    {
+      "id": 3,
+      "rut": "1233333",
+      "nombre": "Ulises",
+      "apellido": "Reveco",
+      "email": "ulises108@gmail.com",
+      "phone": "942597029",
+      "nacimiento": "25/09/2020",
+      "comuna": "Ñuñoa",
+      "region": "13",
+      "brigadista": false,
+      "redes":true,
+      "puertapuerta":false
+    }
+  ]
+}

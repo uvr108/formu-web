@@ -1,0 +1,83 @@
+<!-- main app container -->
+<div class="jumbotron">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6 offset-md-3">
+              <h2>Validation</h2>
+              <br>
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+                <div class="form-group">
+                  <label>Rut</label>
+                  <input type="text" formControlName="rut" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.rut.errors }" />
+                  <div *ngIf="submitted && f.rut.errors" class="invalid-feedback">
+                      <div *ngIf="f.rut.errors.required">Rut es requerido</div>
+                      <div *ngIf="f.rut.errors.checkRut">Rut no es valido</div>
+                      <div *ngIf="f.rut.errors.minlength">Rut al menos deve tener 8 caracteres</div>
+                  </div>
+                </div>
+                <!--
+                <div class="form-group">
+                      <label>Nombre</label>
+                      <input type="text" formControlName="nombre" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" />
+                      <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+                          <div *ngIf="f.nombre.errors.required">nombre es requerido</div>
+                      </div>
+                </div>
+                <div class="form-group">
+                      <label>Apellido</label>
+                      <input type="text" formControlName="apellido" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" />
+                      <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
+                          <div *ngIf="f.apellido.errors.required">Apellido es requerido</div>
+                      </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Nacimiento</label>
+                    <input type="date" formControlName="nacimiento" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nacimiento.errors }" />
+                    <div *ngIf="submitted && f.nacimiento.errors" class="invalid-feedback">
+                        <div *ngIf="f.nacimiento.errors.required">Nacimiento es requerido</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Fono</label>
+                    <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fono.errors }" />
+                    <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.phone.errors.required">Fono es requerido</div>
+                    </div>
+                </div>
+                -->
+                <div class="form-group">
+                      <label>Email</label>
+                      <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                          <div *ngIf="f.email.errors.required">Email es requerido</div>
+                          <div *ngIf="f.email.errors.email">Email debe tener una direccion válida</div>
+                      </div>
+                </div>
+                <!--
+                <div class="form-group">
+                    <label>Región</label>
+                    <input type="text" formControlName="region" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.region.errors }" />
+                    <div *ngIf="submitted && f.region.errors" class="invalid-feedback">
+                        <div *ngIf="f.region.errors.required">Email es requerido</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Comuna</label>
+                  <input type="text" formControlName="comuna" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.comuna.errors }" />
+                  <div *ngIf="submitted && f.comuna.errors" class="invalid-feedback">
+                      <div *ngIf="f.comuna.errors.required">Comuna es requerido</div>
+                  </div>
+                </div>
+                -->
+                <div class="form-group">
+                      <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
